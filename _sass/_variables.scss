@@ -3,8 +3,12 @@
 // VARIABLES
 //
 
+// 颜色使用opencolor https://yeun.github.io/open-color/
+// 主题色可选 red, pink, grape, violet, indigo, blue, cyan, teal, green, lime, yellow
+// 默认为teal，如果需要更换，可以直接将teal并替换成你想要的颜色，例如，查找teal，替换indigo，全部替换，保存，push，完成！
+
 // Colors
-$blue: $oc-blue-8;
+$blue: $oc-cyan-8;
 
 // Grays
 $black: #000;
@@ -36,12 +40,12 @@ $background-color: $oc-gray-0;
 $background-lighten-color: #f8f9fa6b;
 
 $text-color: $base-color;
-$link-color: $oc-blue-8;
-$link-lighten-color: $oc-blue-6;
-$link-bghv-color: $oc-blue-0;
+$link-color: $oc-cyan-8;
+$link-lighten-color: $oc-cyan-6;
+$link-bghv-color: $oc-cyan-0;
 $divider-color: $oc-gray-1;
 
-$error-color:$oc-blue-8;
+$error-color:$oc-cyan-8;
 
 $table-border-color: $oc-gray-2;
 $table-background-color: $oc-gray-1;
