@@ -9,15 +9,13 @@ window.onload = function () {
 
     // 在当前页面刷新，如果已经是open的，直接设置为30%宽度
     if (webOpenContent === "open"){
-        list.style.width = fixWidth(30) + "px"; 
-        console.log(fixWidth(30))
+        sliderBar.style.width = fixWidth(30) + "px"; 
         return;
     }
 
     // 遍历
     for (let i = 0; i < allItemA.length; i++) {
         let itemA = allItemA[i];
-        console.log(itemA);
         itemA.onmousedown=function(){
             let barWidth = sliderBar.style.width;
             if(barWidth > fixWidth(30) || isNaN(parseInt(barWidth))){
