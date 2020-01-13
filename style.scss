@@ -430,6 +430,7 @@ nav {
 .wrapper-content {
   float: right;
   width: 70%;
+  background-color: #333333;
 
   @include mobile {
     float: none;
@@ -457,9 +458,12 @@ nav {
       > a {
         margin: 3px 3px 3px 0;
         padding: .5px 4px;
-        color: $base-color;
+        color: $base-lighten-color;
         background-color: $tag-index-label-background-color;
         border-radius: 3px;
+        display: inline-block;
+        height: 18px;
+        line-height: 18px;
 
         &:hover {
           color: $link-color;
@@ -500,7 +504,10 @@ nav {
   }
 
   .read-more {
-    font-size: 15px;
+    font-size: 12px;
+    border: 1px solid #c0363f;
+    border-radius: 20px;
+    padding: 6px 8px;
   }
 }
 
