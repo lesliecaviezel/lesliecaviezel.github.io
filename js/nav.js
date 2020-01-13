@@ -6,6 +6,9 @@ window.onload = function () {
     let timer = null;
     let sliderBar = this.document.getElementsByClassName("wrapper-sidebar")[0];
     console.log(sliderBar)
+    console.log(list)
+    console.log(nav)
+    console.log(allItemA)
     // 2 遍历
     for (let i = 0; i < allItemA.length; i++) {
         let itemA = allItemA[i];
