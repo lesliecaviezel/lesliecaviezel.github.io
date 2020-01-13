@@ -5,14 +5,14 @@ window.onload = function () {
     let allItemA = nav.children;
     let timer = null;
     let sliderBar = this.document.getElementsByClassName("wrapper-sidebar")[0];
-    console.log(sliderBar)
-    console.log(list)
-    console.log(nav)
-    console.log(allItemA)
+    console.log(sliderBar);
+    console.log(list);
+    console.log(nav);
     // 2 遍历
     for (let i = 0; i < allItemA.length; i++) {
         let itemA = allItemA[i];
-        itemA.onclick=function(){
+        console.log(itemA);
+        itemA.onmousedown=function(){
             let barWidth = sliderBar.style.width;
             console.log(barWidth)
             if(barWidth > fixWidth(30) || isNaN(parseInt(barWidth))){
