@@ -9,7 +9,7 @@
     </div>
   </header>
 
-  <div class="navlist">
+  <div class="navlist" id="navlist">
     <nav>
       {% for nav in site.navigation %}
       {% if nav.url contains 'http://' or nav.url contains 'https://' %}
@@ -28,4 +28,6 @@
     </footer>
   </div>
   <div class="panel-cover--overlay"></div>
+  <script src="{{ site.baseurl }}/js/nav.js"></script>
+
 </div>
