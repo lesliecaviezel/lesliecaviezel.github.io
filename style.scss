@@ -364,8 +364,8 @@ img {
   .site-avatar {
     margin:0 auto;
     display: block;
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 86px;
+    max-height: 86px;
 
     @include mobile {
       max-width: 120px;
@@ -374,7 +374,9 @@ img {
 
     img {
       display: inline-block;
-      border-radius: 2px;
+      border-radius: 50%;
+      border: 3px solid #FFF;
+      box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);
     }
   }
 }
@@ -387,9 +389,6 @@ img {
   font-weight: 700;
   font-size: 28px;
   letter-spacing: 1px;
-  a{
-    color: $base-color;
-  }
 }
 
 .site-description {
@@ -434,7 +433,7 @@ nav {
 .panel-cover--overlay {
   display: block;
   position: absolute;
-  z-index: 0;
+  z-index: -1;
   top: 0;
   right: 0;
   bottom: 0;
@@ -514,10 +513,6 @@ nav {
   h1 {
     margin-bottom: .1em;
     font-size: 22px;
-
-    > a{
-      color: #CCCCCC;
-    }
   }
 
 
