@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="search-container">
-  <input type="text" id="search-input" placeholder="search blog posts..." style="width: 90%;
+  <input type="text" id="search-input" placeholder="搜索博客文章..." style="width: 90%;
     margin-top: 10px;
     height: 35px;
     color: #333;
@@ -28,7 +28,7 @@ layout: default
 	resultsContainer: document.getElementById('results-container'),
 	json: '{{ site.baseurl }}/search.json',
 	searchResultTemplate: '<li><a href="{url}?query={query}" title="{desc}">{title}</a></li>',
-	noResultsText: 'No results found',
+	noResultsText: '未找到相关搜索',
 	limit: 10,
 	fuzzy: false,
 	exclude: ['Welcome']
@@ -94,12 +94,12 @@ layout: default
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
 <!-- pv的方式，单个用户连续点击n篇文章，记录n次访问量 -->
-<div align="center">
+<!-- <div align="center"> -->
 	<!-- <span id="busuanzi_container_site_pv" style="font-family:Consolas;color:Silver;font-size:12px;">
 		View:<span id="busuanzi_value_site_pv" style="font-family:Consolas;color:Silver;font-size:12px;"></span>
 	</span> -->
 	<!-- uv的方式，单个用户连续点击n篇文章，只记录1次访客数 -->
-	<span id="busuanzi_container_site_uv" style="font-family:Consolas;color:Silver;font-size:12px;">
+	<!-- <span id="busuanzi_container_site_uv" style="font-family:Consolas;color:Silver;font-size:12px;">
 		访客数:<span id="busuanzi_value_site_uv" style="font-family:Consolas;color:Silver;font-size:12px;"></span>
-	</span>
-</div>
+	</span> -->
+<!-- </div> -->

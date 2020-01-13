@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "MarkDown"
+title: "MarkDown简单用法"
 date:   2020-1-10
 tags: [markdown]
 comments: true
@@ -63,8 +63,13 @@ print('python 代码块？')
 ![图片描述](图片链接)
 ```
   
-- 分割线：就是3个星号 ***
+- 分割线：就是3个星号
+  ```
   ***
+  ```
+  
+  ***
+
 - 插入视频：
 
 <video id="video" controls="" width="300px" height="200px" preload="none" poster="https://i.loli.net/2020/01/09/n9bcw14OXN82lMD.png">
