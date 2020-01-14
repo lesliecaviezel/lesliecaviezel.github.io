@@ -10,6 +10,8 @@ window.onload = function () {
     let href = window.location.href.replace("http://",""); /* 获取完整URL */
     let arr = href.split('/');
     let isSubPage = arr.length > 1 && arr[1].length > 0;
+    console.log(arr)
+    console.log(isSubPage)
 
     // 在当前页面刷新，如果已经是open的，直接设置为30%宽度
     if (webOpenContent === "open" || isSubPage) {
