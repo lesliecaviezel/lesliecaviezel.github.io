@@ -8,27 +8,30 @@ window.onload = function () {
     let sliderBar = this.document.getElementsByClassName("wrapper-sidebar")[0];
 
     // 在当前页面刷新，如果已经是open的，直接设置为30%宽度
-    if (webOpenContent === "open"){
-        sliderBar.style.width = fixWidth(30) + "px"; 
+    if (webOpenContent === "open") {
+        sliderBar.style.width = fixWidth(30) + "px";
         return;
     }
+
+    if (!IsPC()) return;
 
     // 遍历
     for (let i = 0; i < allItemA.length; i++) {
         let itemA = allItemA[i];
-        itemA.onmousedown=function(){
+        itemA.onmousedown = function () {
+            if (!IsPC()) return;
             let barWidth = sliderBar.style.width;
-            if(barWidth > fixWidth(30) || isNaN(parseInt(barWidth))){
-                sessionStorage.setItem("webState", "open"); 
+            if (barWidth > fixWidth(30) || isNaN(parseInt(barWidth))) {
+                sessionStorage.setItem("webState", "open");
                 let begin = 100, end = 30;
                 // 缓动动画
                 timer = setInterval(function () {
                     begin = begin + (end - begin) * 0.1;
                     sliderBar.style.width = fixWidth(parseInt(begin)) + "px";
-                    if(parseInt(begin) === 30){
-                        clearInterval(timer); 
+                    if (parseInt(begin) === 30) {
+                        clearInterval(timer);
                     }
-                },15);
+                }, 15);
             }
         }
     }
@@ -40,5 +43,20 @@ window.onload = function () {
 
     function $(id) {
         return typeof id === 'string' ? document.getElementById(id) : null;
+    }
+
+    function IsPC() {
+        let userAgentInfo = navigator.userAgent;
+        let Agents = ["Android", "iPhone",
+            "SymbianOS", "Windows Phone",
+            "iPad", "iPod"];
+        let flag = true;
+        for (let v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
     }
 }

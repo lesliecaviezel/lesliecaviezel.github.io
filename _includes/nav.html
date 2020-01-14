@@ -1,33 +1,97 @@
 <div class="wrapper-sidebar">
-  <header class="sidebar clearfix">
-    <div class="site-info">
-      {% if site.avatar %}
-        <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
-      {% endif %} 
-      <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-      <p class="site-description">{{ site.description }}</p>
+    <header class="sidebar clearfix">
+        <div class="site-info">
+            {% if site.avatar %}
+            <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
+            {% endif %}
+            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+            <p class="site-description">{{ site.description }}</p>
+        </div>
+    </header>
+
+    <div class="navlist" id="navlist">
+        <nav>
+            {% for nav in site.navigation %}
+            {% if nav.url contains 'http://' or nav.url contains 'https://' %}
+            <a href="{{ nav.url }}">{{ nav.name }}</a>
+            {% else %}
+            <a href="{{ site.baseurl }}{{ nav.url }}">{{ nav.name }}</a>
+            {% endif %}
+            {% endfor %}
+        </nav>
     </div>
-  </header>
 
-  <div class="navlist" id="navlist">
-    <nav>
-      {% for nav in site.navigation %}
-      {% if nav.url contains 'http://' or nav.url contains 'https://' %}
-      <a href="{{ nav.url }}">{{ nav.name }}</a>
-      {% else %}
-      <a href="{{ site.baseurl }}{{ nav.url }}">{{ nav.name }}</a>
-      {% endif %}
-      {% endfor %}
-    </nav>
-  </div>
+    <div class="wrapper-footer-desktop">
 
-  <div class="wrapper-footer-desktop">
+        <footer class="footer">
+            {% include footer.html %}
+        </footer>
+    </div>
+    <div class="panel-cover--overlay"></div>
+    <!-- <script src="{{ site.baseurl }}/js/nav.js"></script> -->
+    <!-- 防止网络不好 导致js无法加载，因此js代码直接写进html -->
+    <script>
+        window.onload = function () {
+            let webOpenContent = sessionStorage.getItem("webState");
+            // 获取需要的标签
+            let list = $('navlist');
+            let nav = list.children[0];
+            let allItemA = nav.children;
+            let timer = null;
+            let sliderBar = this.document.getElementsByClassName("wrapper-sidebar")[0];
 
-    <footer class="footer">
-      {% include footer.html %}
-    </footer>
-  </div>
-  <div class="panel-cover--overlay"></div>
-  <script src="{{ site.baseurl }}/js/nav.js"></script>
+            // 在当前页面刷新，如果已经是open的，直接设置为30%宽度
+            if (webOpenContent === "open") {
+                sliderBar.style.width = fixWidth(30) + "px";
+                return;
+            }
 
+            if (!IsPC()) return;
+
+            // 遍历
+            for (let i = 0; i < allItemA.length; i++) {
+                let itemA = allItemA[i];
+                itemA.onmousedown = function () {
+                    if (!IsPC()) return;
+                    let barWidth = sliderBar.style.width;
+                    if (barWidth > fixWidth(30) || isNaN(parseInt(barWidth))) {
+                        sessionStorage.setItem("webState", "open");
+                        let begin = 100, end = 30;
+                        // 缓动动画
+                        timer = setInterval(function () {
+                            begin = begin + (end - begin) * 0.1;
+                            sliderBar.style.width = fixWidth(parseInt(begin)) + "px";
+                            if (parseInt(begin) === 30) {
+                                clearInterval(timer);
+                            }
+                        }, 15);
+                    }
+                }
+            }
+
+            //宽度百分比的方法
+            function fixWidth(percent) {
+                return document.body.clientWidth * percent / 100; //这里你可以自己做调整 
+            }
+
+            function $(id) {
+                return typeof id === 'string' ? document.getElementById(id) : null;
+            }
+
+            function IsPC() {
+                let userAgentInfo = navigator.userAgent;
+                let Agents = ["Android", "iPhone",
+                    "SymbianOS", "Windows Phone",
+                    "iPad", "iPod"];
+                let flag = true;
+                for (let v = 0; v < Agents.length; v++) {
+                    if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                        flag = false;
+                        break;
+                    }
+                }
+                return flag;
+            }
+        }
+    </script>
 </div>
