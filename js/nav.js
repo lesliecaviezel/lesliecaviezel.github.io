@@ -6,14 +6,16 @@ window.onload = function () {
     let allItemA = nav.children;
     let timer = null;
     let sliderBar = this.document.getElementsByClassName("wrapper-sidebar")[0];
-    console.log(sliderBar.style.width);
-    console.log(webOpenContent)
+
+    let href = window.location.href.replace("http://",""); /* 获取完整URL */
+    let arr = href.split('/');
+    let isSubPage = arr.length > 1 && arr[1].length > 0;
+
     // 在当前页面刷新，如果已经是open的，直接设置为30%宽度
-    if (webOpenContent === "open") {
+    if (webOpenContent === "open" || isSubPage) {
         sliderBar.style.width = fixWidth(30) + "px";
-        console.log(sliderBar.style.width);
         return;
-    }else{
+    } else {
         sliderBar.style.width = fixWidth(100) + "px";
     }
 
