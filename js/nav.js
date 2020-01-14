@@ -7,7 +7,8 @@ window.onload = function () {
     let timer = null;
     let sliderBar = this.document.getElementsByClassName("wrapper-sidebar")[0];
 
-    let href = window.location.href.replace("http://",""); /* 获取完整URL */
+    let href = window.location.href.replace("https://",""); /* 获取完整URL */
+    href = href.replace("http://","");//本地调试用
     let arr = href.split('/');
     let isSubPage = arr.length > 1 && arr[1].length > 0;
     console.log(arr)
