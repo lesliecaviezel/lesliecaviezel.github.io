@@ -7,22 +7,29 @@ window.onload = function () {
     let timer = null;
     let sliderBar = this.document.getElementsByClassName("wrapper-sidebar")[0];
 
+    console.log(webOpenContent)
     // 在当前页面刷新，如果已经是open的，直接设置为30%宽度
     if (webOpenContent === "open") {
         sliderBar.style.width = fixWidth(30) + "px";
+        console.log("isOpen")
         return;
+    }else{
+        sliderBar.style.width = fixWidth(100) + "px";
+        console.log("notOpen")
     }
 
     if (!IsPC()) return;
-
     // 遍历
     for (let i = 0; i < allItemA.length; i++) {
         let itemA = allItemA[i];
         itemA.onmousedown = function () {
             if (!IsPC()) return;
+            console.log("isPC")
             let barWidth = sliderBar.style.width;
-            if (barWidth > fixWidth(30) || isNaN(parseInt(barWidth))) {
+            console.log("width "+ parseInt(barWidth) + "  "+fixWidth(30))
+            if (parseInt(barWidth) > fixWidth(30)) {
                 sessionStorage.setItem("webState", "open");
+                console.log("changeOpen")
                 let begin = 100, end = 30;
                 // 缓动动画
                 timer = setInterval(function () {
