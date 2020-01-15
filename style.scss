@@ -321,6 +321,7 @@ img {
 //
 
 .wrapper-sidebar {
+  display: none;
   width: 30%;
 	-webkit-background-size: cover;
 	background-size: cover;
@@ -334,6 +335,7 @@ img {
 
 
   @include mobile {
+    display: block;
     width: 100%;
     height: auto;
     padding-bottom: 24px;

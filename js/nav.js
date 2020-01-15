@@ -11,9 +11,9 @@ window.onload = function () {
     href = href.replace("http://","");//本地调试用
     let arr = href.split('/');
     let isSubPage = arr.length > 1 && arr[1].length > 0;
-    console.log(arr)
-    console.log(isSubPage)
 
+    if (!IsPC()) return;
+    sliderBar.style.display = "block";
     // 在当前页面刷新，如果已经是open的，直接设置为30%宽度
     if (webOpenContent === "open" || isSubPage) {
         sliderBar.style.width = fixWidth(30) + "px";
@@ -22,7 +22,6 @@ window.onload = function () {
         sliderBar.style.width = fixWidth(100) + "px";
     }
 
-    if (!IsPC()) return;
     // 遍历
     for (let i = 0; i < allItemA.length; i++) {
         let itemA = allItemA[i];
