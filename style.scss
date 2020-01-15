@@ -337,7 +337,7 @@ img {
   @include mobile {
     display: block;
     width: 100%;
-    height: auto;
+    height: fit-content;
     padding-bottom: 24px;
     position: relative;
     border-bottom: 1px solid $divider-color;
@@ -454,6 +454,7 @@ nav {
   @include mobile {
     float: none;
     width: 100%;
+    height: fit-content;
   }
 }
 
