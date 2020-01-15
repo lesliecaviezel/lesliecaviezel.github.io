@@ -444,12 +444,14 @@
     margin-right: 0;
   }
   .gt-container .gt-btn-preview {
-    background-color: $oc-white;
-    color: $link-color;
+    background-color: $background-color;
+    color: $oc-white;
+    border-color: $oc-white;
   }
   .gt-container .gt-btn-preview:hover {
     background-color: $background-lighten-color;
     border-color: $link-lighten-color;
+    color: $link-color;
   }
   .gt-container .gt-btn-public:hover {
     background-color: $link-lighten-color;
@@ -596,6 +598,7 @@
     outline: none;
     -webkit-transition: all 0.25s ease;
     transition: all 0.25s ease;
+    color:$base-color;
   }
   .gt-container .gt-header-textarea:hover {
     background-color: $background-lighten-color;
@@ -696,7 +699,7 @@
             flex: 1;
     margin-left: 1.25em;
     padding: 0.75em 1em;
-    background-color: $background-lighten-color;
+    background-color: $background-color;
     border-radius: 5px;
     border: 1px solid $divider-color;
     overflow: auto;
@@ -704,7 +707,7 @@
     transition: all ease 0.25s;
   
     &:hover {
-      background-color: $white;
+      background-color: $background-lighten-color;
     }
   }
   
