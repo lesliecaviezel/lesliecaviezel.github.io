@@ -161,7 +161,7 @@ fi
 
 `TARGET_BUILD_DIR`:也是编译路径，BUILD_DIR下的文件的原始地址 /Users/yining/.../LPVBSKit-xxx/.../LPBLESetupKit/IntermediateBuildFilesPath/UninstalledProducts/iphoneos
 
-## 4.SDK编译Shell
+## 4.编译SDK的Shell
 
 ### 4.1 shell代码
 
