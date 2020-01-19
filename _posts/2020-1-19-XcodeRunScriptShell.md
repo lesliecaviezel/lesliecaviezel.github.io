@@ -18,21 +18,21 @@ toc: true
 
 >介绍Shell前，我们需要先了解一下lipo命令。什么是lipo？从字面意思理解，它是脂肪的意思，app为了兼容不同的架构（armv7, arm64, i386, x86_64...），需要将不同平台的编译程序合并起来，生成所谓的胖文件（Fat File），而我们的lipo，就是用来干这个的。
 
-1. 查看静态库（通用文件）支持的CPU架构
+1.查看静态库（通用文件）支持的CPU架构
 
 ```shell
 lipo -info libname.a
 输出：Architectures in the fat file: libname.a are: i386 x86_64 armv7 arm64
 ```
 
-2. 合并静态库
+2.合并静态库
 
 ```shell
 #lipo -create 静态库存放路径1  静态库存放路径2 ...  -output 整合后存放的路径
 lipo  -create  libname-armv7.a   libname-armv7s.a   libname-i386.a  -output  libname.a
 ```
 
-3. 静态库拆分或者“瘦身”（提取单个平台）
+3.静态库拆分或者“瘦身”（提取单个平台）
 
 ```shell
 # lipo 静态库源文件路径 -thin CPU架构名称 -output 拆分后文件存放路径
@@ -40,7 +40,7 @@ lipo  -create  libname-armv7.a   libname-armv7s.a   libname-i386.a  -output  lib
 lipo  libname.a  -thin  armv7  -output  libname-armv7.a
 ```
 
-4. 提取、替换和去除指定CPU架构
+4.提取、替换和去除指定CPU架构
 
 ```shell
 # 提取出armv7架构并新建一个通用文件，类似于-thin选项。
@@ -61,40 +61,39 @@ lipo libname.a -replace armv7 libreplace.a -output liboutput.a
 
 要注意的是，使用[]和[[]]的时候不要吝啬空格，每一项两边都要有空格，[[ 1 == 2 ]]的结果为“假”，但[[ 1==2 ]]的结果为“真”！后一种显然是错的
 
-    1. (): 括号中的命令将会新开一个子shell顺序执行，括号中多个命令之间用分号隔开
+1.1 (): 括号中的命令将会新开一个子shell顺序执行，括号中多个命令之间用分号隔开
 
-    ```shell
-    #具体使用场景暂时未了解
-    #个人理解了一下，貌似是类似于在终端直接输入，例如下面我本想判断环境变量ACTION的值
-    if ("${ACTION}" == "install" )
-    #但是输出却是 install: ==: No such file or directory
-    ```
+```shell
+#具体使用场景暂时未了解
+#个人理解了一下，貌似是类似于在终端直接输入，例如下面我本想判断环境变量ACTION的值
+if ("${ACTION}" == "install" )
+#但是输出却是 install: ==: No such file or directory
+```
 
-    1. (()) : 是一种数学计算命令，它除了可以进行最基本的加减乘除运算，还可以进行大于、小于、等于等关系运算，以及与、或、非逻辑运算。这种扩展计算是整数型的计算，不支持浮点型（*没试过*）。
+1.2 (()) : 是一种数学计算命令，它除了可以进行最基本的加减乘除运算，还可以进行大于、小于、等于等关系运算，以及与、或、非逻辑运算。这种扩展计算是整数型的计算，不支持浮点型（*没试过*）。
 
-    ```shell
-    #依然以这个判断为例，这样写就没问题了
-    if (("${ACTION}" == "install" ))
-    #之前为了判断字符串相等，加了双引号，后来试了一下，不加双引号也没问题
-    if ((${ACTION} == "install" ))
-    ```
+```shell
+#依然以这个判断为例，这样写就没问题了
+if (("${ACTION}" == "install" ))
+#之前为了判断字符串相等，加了双引号，后来试了一下，不加双引号也没问题
+if ((${ACTION} == "install" ))
+```
 
-    1. []：用来用于字符串比较的，不可用于整数比较
+1.3 []：用来用于字符串比较的，不可用于整数比较
 
-    ```shell 
-    #同样的，加不加双引号都行，字符串比较的话还是用[]吧
-    if ["${ACTION}" == "install" ]
-    if [${ACTION} == "install" ]
-    ```
+```shell 
+#同样的，加不加双引号都行，字符串比较的话还是用[]吧
+if ["${ACTION}" == "install" ]
+if [${ACTION} == "install" ]
+```
 
-    1. [[]]：在[[和]]之间所有的字符都不会发生文件名扩展或者单词分割，但是会发生参数扩展和命令替换(*暂时不理解，留作备注*)。
+1.4 [[]]：在[[和]]之间所有的字符都不会发生文件名扩展或者单词分割，但是会发生参数扩展和命令替换(*暂时不理解，留作备注*)。
 
-    ```shell
-    #支持字符串的模式匹配，例如
-    [[ hello == hell? ]]，结果为真
-    #[[ ]] 中匹配字符串或通配符，不需要引号
-    ```
-
+```shell
+#支持字符串的模式匹配，例如
+[[ hello == hell? ]]，结果为真
+#[[ ]] 中匹配字符串或通配符，不需要引号
+```
 
 2.if elif else 语法
 if语法其实很简单,写 if 和 else if的时候，后面加个then就完事，写完if整个逻辑后用fi收尾即可
