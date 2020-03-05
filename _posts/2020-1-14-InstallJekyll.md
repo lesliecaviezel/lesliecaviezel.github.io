@@ -2,7 +2,7 @@
 layout: post
 title: "安装Jekyll"
 date:   2020-1-14
-tags: [tool]
+tags: [工具]
 comments: true
 author: 大宁
 ---
