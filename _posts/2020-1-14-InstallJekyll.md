@@ -41,7 +41,8 @@ jekyll server
 3.启动成功后，直接在浏览器输入`http://127.0.0.1:4000/`即可同步调试
 
 ## 三、报错汇总
-启动server时，可能会遇到不同的错误，我在使用时，遇到的问题基本是缺少不同的jekyll库，遇到这种问题很简单，安装对应的库即可，例如：
+
+### 3.1 启动server时，可能会遇到不同的错误，我在使用时，遇到的问题基本是缺少不同的jekyll库，遇到这种问题很简单，安装对应的库即可，例如：
 
 ![server_error]({{site.baseurl}}/images/InstallJekyll/jekyll_server_error.png)
 
@@ -50,3 +51,24 @@ jekyll server
 ```bash
 sudo gem install jekyll-sitemap
 ```
+
+<hr>
+
+### 3.2 尝试配置Linkplay SDK Github Pages时，按照其对应的模板执行了 `bundle install`
+
+bundle install后，会自动安装很多库，具体没研究，不过再次启动本地调试的话，之前的jekyll server已经不行了；<br>
+此时想要本地调试需要2步：
+
+1. 创建Gemfile文件，模板如下(不指定版本也行)
+   ```shell
+    source 'https://rubygems.org'
+    gem "jekyll", '3.8.4'
+    group :jekyll_plugins do
+        gem 'jekyll-feed', '0.11.0'
+        gem 'jekyll-seo-tag', '2.5.0'
+        gem 'jekyll-sitemap', '1.2.0'
+        gem 'jekyll-paginate'
+    end
+   ```
+
+2. 创建完成后就可以通过执行 `bundle exec jekyll serve` 来拉起本地server `http://127.0.0.1:4000` ;<br>同时会生成Gemfile.lock文件，可忽略
