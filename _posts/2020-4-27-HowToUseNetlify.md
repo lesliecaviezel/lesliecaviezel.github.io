@@ -18,9 +18,19 @@ Netlify是一家提供静态网站托管的综合平台，支持自动从Github�
 
 ## 二. 配置
 
-1. 首先打开<a href="https://www.netlify.com/" target="_blank">Netlify官网</a>
+1. 首先打开 <a href="https://www.netlify.com/" target="_blank">Netlify官网</a>
 2. 然后进行一系列配置，很简单，就不详细说明了；不过有几点要注意：
     1. 博客根目录要配置Gemfile：因为Netlify在构建网页时需要知道自己该以怎样的方式去构建
+        ```shell
+        source 'https://rubygems.org'
+            gem "jekyll", '3.8.4'
+        group :jekyll_plugins do
+            gem 'jekyll-feed', '0.11.0'
+            gem 'jekyll-seo-tag', '2.5.0'
+            gem 'jekyll-sitemap', '1.2.0'
+            gem 'jekyll-paginate'
+        end
+        ```
     2. Build & deploy配置下，Build command要填`jekyll build`,Publish directory要填`_site`
 
 配置完成后，就稍作等待就可以访问了
