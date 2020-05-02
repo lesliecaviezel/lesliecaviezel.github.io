@@ -55,11 +55,11 @@ sudo gem install jekyll-sitemap
 <hr>
 
 ### 3.2 尝试配置Linkplay SDK Github Pages时，按照其对应的模板执行了 `bundle install`
-
-bundle install后，会自动安装很多库，具体没研究，不过再次启动本地调试的话，之前的jekyll server已经不行了；<br>
+由于调试了其他的jekyll theme，在调试时按照步骤执行了bundleinstall<br>
+bundle install后，会根据目录下的Gemfile文件自动安装很多库，具体没研究，不过再次启动本地调试的话，之前的jekyll server已经不行了；<br>
 此时想要本地调试需要2步：
 
-1. 创建Gemfile文件，模板如下(不指定版本也行)
+1. Gemfile文件，模板如下(不指定版本也行)
    ```shell
     source 'https://rubygems.org'
     gem "jekyll", '3.8.4'
@@ -72,3 +72,21 @@ bundle install后，会自动安装很多库，具体没研究，不过再次启
    ```
 
 2. 创建完成后就可以通过执行 `bundle exec jekyll serve` 来拉起本地server `http://127.0.0.1:4000` ;<br>同时会生成Gemfile.lock文件，可忽略
+
+3. 当然也可以`解决以上问题`，将其恢复到 `jekyll serve` 的方式；
+   1. 先删除Gemfile.Lock文件，然后重新编辑Gemfile，将jekyll 升级到最新的4.0.0：
+        ```shell
+            # source 'https://rubygems.org' #配置Netfily的话，因为其服务器在国外，因此用此源
+            source 'https://gems.ruby-china.com' #本地执行的时候为了加速，将源改为ruby-china
+
+            gem "jekyll", '~> 4.0.0'
+
+            group :jekyll_plugins do
+              gem 'jekyll-feed'
+              gem 'jekyll-seo-tag'
+              gem 'jekyll-sitemap'
+              gem 'jekyll-paginate'
+            end
+        ``` 
+    2. 重新bundle install，成功后即可重新使用 `jekyll serve` 来进行本地调试了
+    3. 最后为了Netfily，记得吧Gemflie和Gemfile.lock文件中的Gem sourse改回 `https://rubygems.org`

@@ -1,10 +1,11 @@
-source 'https://rubygems.org'
+source 'https://rubygems.org' #配置Netfily的话，因为其服务器在国外，因此用此源
+# source 'https://gems.ruby-china.com' #本地执行的时候为了加速，将源改为ruby-china
 
-gem "jekyll", '3.8.4'
+gem "jekyll", '~> 4.0.0'
 
 group :jekyll_plugins do
-  gem 'jekyll-feed', '0.11.0'
-  gem 'jekyll-seo-tag', '2.5.0'
-  gem 'jekyll-sitemap', '1.2.0'
+  gem 'jekyll-feed'
+  gem 'jekyll-seo-tag'
+  gem 'jekyll-sitemap'
   gem 'jekyll-paginate'
 end
