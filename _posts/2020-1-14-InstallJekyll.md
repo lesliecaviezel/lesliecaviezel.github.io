@@ -76,8 +76,8 @@ bundle install后，会根据目录下的Gemfile文件自动安装很多库，�
 3. 当然也可以`解决以上问题`，将其恢复到 `jekyll serve` 的方式；
    1. 先删除Gemfile.Lock文件，然后重新编辑Gemfile，将jekyll 升级到最新的4.0.0：
         ```shell
-            # source 'https://rubygems.org' #配置Netfily的话，因为其服务器在国外，因此用此源
-            source 'https://gems.ruby-china.com' #本地执行的时候为了加速，将源改为ruby-china
+            source 'https://rubygems.org' #配置Netfily的话，因为其服务器在国外，因此用此源
+            #source 'https://gems.ruby-china.com' #本地执行的时候为了加速，将源改为ruby-china
 
             gem "jekyll", '~> 4.0.0'
 
