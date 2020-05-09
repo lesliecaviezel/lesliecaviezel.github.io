@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html>
-  {% include head.html %}
-  <body>
-    {% include nav.html %}
+{% include head.html %}
 
-    {% if page.toc==true %}
-      <aside class="toc">
-        {% include toc.html html=content %}
-      </aside>
-    {% endif %}
-
-    <div id="main" role="main" class="wrapper-content">
-      <div class="container">
-        {{ content }}
-      </div>
-    </div>
-
-    {% include analytics.html %}
-  </body>
+<body>
+  {% include nav.html %}
 
   {% if page.toc==true %}
-  <script>
-    document.getElementById("main").classList.add("withtoc");
-  </script>
+  <aside class="toc">
+    {% include toc.html html=content %}
+  </aside>
   {% endif %}
 
-  <div class="wrapper-footer-mobile">
-    <footer class="footer">
-      {% include footer.html %}
-    </footer>
+  <div id="main" role="main" class="wrapper-content">
+    <div class="container">
+      {{ content }}
+    </div>
+  </div>
+
+  {% include analytics.html %}
+</body>
+
+{% if page.toc==true %}
+<script> document.getElementById("main").classList.add("withtoc");</script>
+{% else %}
+<!-- 如果不加一行script，那么没有toc的页面，在刷新的时候，部分文字会从小变到大，颜色从蓝色变成正常的高亮色，暂时这么处理就没问题了 -->
+<!-- 仅仅在netlify网站上会有这个问题，github.io上是没有这个问题的 -->
+<script> document.getElementById("main").classList.add("withNoToc");</script>
+{% endif %}
+
+<div class="wrapper-footer-mobile">
+  <footer class="footer">
+    {% include footer.html %}
+  </footer>
 
 
 </html>
