@@ -385,12 +385,16 @@ img {
   .site-avatar {
     margin: 0 auto;
     display: block;
-    max-width: 86px;
-    max-height: 86px;
+    // max-width: 86px;
+    // max-height: 86px;
+    width: 86px;
+    height: 86px;
 
     @include mobile {
-      max-width: 120px;
-      max-height: 120px;
+      // max-width: 120px;
+      // max-height: 120px;
+      width: 120px;
+      height: 120px;
     }
 
     img {
@@ -404,6 +408,7 @@ img {
 
 .site-name {
   margin: 0 auto;
+  margin-top: 10px;
   color: $base-color;
   cursor: pointer;
   font-family: $base-font;
@@ -602,7 +607,7 @@ nav {
   .withtoc {
     padding-left: 260px;
   }
-  .withNoToc{
+  .withNoToc {
     padding-left: 0px;
   }
 }
