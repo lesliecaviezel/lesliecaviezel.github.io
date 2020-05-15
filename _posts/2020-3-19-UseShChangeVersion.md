@@ -2,7 +2,7 @@
 layout: post
 title: "Xcode利用shell更改build号"
 date:   2020-3-19
-tags: [shell]
+tags: [shell,Xcode]
 comments: true
 author: 大宁
 toc: false

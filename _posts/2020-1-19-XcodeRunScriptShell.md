@@ -2,7 +2,7 @@
 layout: post
 title: "Xcode利用shell编译sdk"
 date:   2020-1-19
-tags: [shell]
+tags: [shell,Xcode]
 comments: true
 author: 大宁
 toc: true
