@@ -1,14 +1,15 @@
 ---
 layout: post
 title: "iOS给项目添加多语种"
-date:   2020-5-13
+date:   2020-5-15
 tags: [Xcode]
 comments: true
 author: 大宁
 toc: false
 ---
 
-概述：给项目添加多语种时，如果嫌手动添加麻烦，可以尝试次文章方法
+概述：<br>
+给项目添加多语种时，如果嫌手动添加麻烦，可以尝试此文章方法
 
 <!-- more -->
 

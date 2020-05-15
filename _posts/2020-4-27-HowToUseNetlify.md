@@ -2,13 +2,14 @@
 layout: post
 title: "使用Netlify加速Github Pages访问速度"
 date:   2020-4-27
-tags: [工具]
+tags: [Tool]
 comments: true
 author: 大宁
 toc: false
 ---
 
-概述：使用Github Pages搭建个人博客，即免费又便捷，但其有一个很大的问题就是国内的访问速度很慢，为了低成本的解决这个问题，在此介绍一个服务：`Netlify`
+概述：<br>
+使用Github Pages搭建个人博客，即免费又便捷，但其有一个很大的问题就是国内的访问速度很慢，为了低成本的解决这个问题，在此介绍一个服务：`Netlify`
 
 <!-- more -->
 

@@ -2,12 +2,13 @@
 layout: post
 title: "Cocoapods相关问题"
 date:   2020-4-7
-tags: [工具]
+tags: [Tool]
 comments: true
 author: 大宁
 ---
 
-概述：使用Cocoapods时偶尔会遇到一些奇怪的问题，在此记录，方便查询
+概述：<br>
+使用Cocoapods时偶尔会遇到一些奇怪的问题，在此记录，方便查询
 
 <!-- more -->
 

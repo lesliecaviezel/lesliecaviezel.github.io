@@ -8,7 +8,8 @@ author: 大宁
 toc: true
 ---
 
-概述：简单记录一下vscode上使用markdown all in one插件后，简单的markdown写法
+概述：<br>
+简单记录一下vscode上使用markdown all in one插件后，简单的markdown写法
 
 目录：F1后Create Table of Content即可创建目录，看样子是根据标题来自动同步Table,；
 LOFFER 自带目录，就不创建了，支持不太好

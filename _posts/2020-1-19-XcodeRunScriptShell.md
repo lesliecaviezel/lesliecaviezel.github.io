@@ -8,7 +8,8 @@ author: 大宁
 toc: true
 ---
 
-概述：Xcode编译工程的时候，可以在Build Phases里增加Run Script脚本，用来打包SDK、运行Python修改工程信息或者其他功能，这里简单介绍一下使用Shell脚本来辅助打包SDK的相关知识；
+概述：<br>
+Xcode编译工程的时候，可以在Build Phases里增加Run Script脚本，用来打包SDK、运行Python修改工程信息或者其他功能，这里简单介绍一下使用Shell脚本来辅助打包SDK的相关知识；
 
 <!-- more -->
 
