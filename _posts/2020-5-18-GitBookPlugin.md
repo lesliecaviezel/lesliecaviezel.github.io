@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "GitBook插件"
+title: "GitBook常用插件"
 date:   2020-5-18
 tags: [Tool, GitBook]
 comments: true
