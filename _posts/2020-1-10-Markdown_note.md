@@ -53,9 +53,9 @@ print('python 代码块？')
   >用来突出内容
 - 链接： 
   - 格式：[标签名字]（#链接地址）
-  - [百度](#https://www.baidu.com)
+  - [百度](https://www.baidu.com)
 ```
-[百度](#https://www.baidu.com)
+[百度](https://www.baidu.com)
 ```
 - 插入图片
   - 例：![test.png](https://i.loli.net/2020/01/09/n9bcw14OXN82lMD.png)

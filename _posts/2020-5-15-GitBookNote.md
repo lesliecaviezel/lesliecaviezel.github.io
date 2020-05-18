@@ -16,18 +16,19 @@ GitBook有固定好的框架，非常适合书写SDK文档。
 
 # 1 GitBook简介
 
-+ [GitBook官网](#https://www.gitbook.com)
-+ [GitBook文档](#https://github.com/GitbookIO/gitbook)
++ [GitBook官网](https://www.gitbook.com)
++ [GitBook文档](https://github.com/GitbookIO/gitbook)
 
 # 2 步骤
 
-1. 创建好指定目录后，在该目录下执行 `gitbook init`
+1. 创建好指定目录后，在该目录下执行 `gitbook init`<br>
+首次init后，会自动生成README.md 和 SUMMARY.md 这两个文件；README就是说明文档，而SUMMARY其实就是页面的目录结构
 
-    首次init后，会自动生成README.md 和 SUMMARY.md 这两个文件；README就是说明文档，而SUMMARY其实就是页面的目录结构
 2. 这时候其实就已经完成了初创GitBook了，接下来输入 `gitbook serve` 命令，就可以直接拉起 `http://localhost:4000` 本地serve，在浏览器可以直接展示
+
 3. 接下来便可以针对此GibBook增加配置了，配置信息要放在 `book.json`里，例如：
 
-   ```json
+```shell
 {
     "title": "LinkPlay SDK", #本书标题
     "author": "LinkPlay", #本书作者
@@ -74,16 +75,18 @@ GitBook有固定好的框架，非常适合书写SDK文档。
         }
       }
 }
-   ```
+```
 
 4. 如果book.json配置中包含plugins，那么在重新 `gitbook serve` 前需要先 `gitbook install` ，安装对应的插件，实际上就是用npm去install
+
 5. 接下来就可以配置页面的目录结构，修改 `SUMMARY.md` ，便可达到修改目录的作用，例：
-    ```markdown
-        # Summary
-        * [介绍](README.md)
-        * [iOS](iOS/README.md) <!-- 如果把md中的文档在左侧显示目录，可以拼接(#标题名) -->
-            * [Device_SDK](iOS/Device_SDK.md#标题1)
-            * [Device_SDK](iOS/Device_SDK.md#标题2)
-        * [Android](android/README.md)
-            * [测试](android/Test.md)
-    ```
+
+```markdown
+  # Summary
+  * [介绍](README.md)
+  * [iOS](iOS/README.md) <!-- 如果把md中的文档在左侧显示目录，可以拼接(#标题名) -->
+      * [Device_SDK](iOS/Device_SDK.md#标题1)
+      * [Device_SDK](iOS/Device_SDK.md#标题2)
+  * [Android](android/README.md)
+      * [测试](android/Test.md)
+```

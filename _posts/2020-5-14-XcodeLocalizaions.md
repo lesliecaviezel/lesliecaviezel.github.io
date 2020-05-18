@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "iOS给项目添加多语种"
-date:   2020-5-15
+date:   2020-5-14
 tags: [Xcode]
 comments: true
 author: 大宁
