@@ -27,55 +27,54 @@ GitBook有固定好的框架，非常适合书写SDK文档。
 2. 这时候其实就已经完成了初创GitBook了，接下来输入 `gitbook serve` 命令，就可以直接拉起 `http://localhost:4000` 本地serve，在浏览器可以直接展示
 
 3. 接下来便可以针对此GibBook增加配置了，配置信息要放在 `book.json`里，例如：
-
-```shell
-{
-    "title": "LinkPlay SDK", #本书标题
-    "author": "LinkPlay", #本书作者
-    "description": "LinkPlay SDK 文档", #本书描述
-    "language": "zh-hans", #本书语言，中文设置 "zh-hans" 即可
-    "styles": {
-        "website": "./styles/website.css" #自定义页面样式
-    },
-    "structure": {
-        "readme": "README.md" #指定Readme、Summary、Glossary和Languages对应的文件名
-    },
-    "plugins": [ #配置使用的插件
-        "-sharing",
-        "js-sequence-diagram-full@>=0.3.1",
-        "prism",
-        "-highlight",
-        "anchors",
-        "splitter",
-        "github",
-        "anchor-navigation-ex",
-        "expandable-chapters-small",
-        "pageview-count",
-        "language-picker"
-      ],
-      "pluginsConfig": { #配置插件的属性
-        "prism": {
-          "css": [
-            "prismjs/themes/prism-okaidia.css"
-          ],
-          "lang": {
-            "oc": "objectivec",
-            "objc": "objectivec",
-            "objective-c": "objectivec"
-          },
-          "ignore": [
-            "sequence"
-          ]
-        },
-        "github": {
-          "url": "https://github.com/linkplayapp/linkplay_sdk_doc"
-        },
-        "anchor-navigation-ex": {
-          "showGoTop": false
-        }
-      }
-}
-```
+   ```shell
+   {
+       "title": "LinkPlay SDK", #本书标题
+       "author": "LinkPlay", #本书作者
+       "description": "LinkPlay SDK 文档", #本书描述
+       "language": "zh-hans", #本书语言，中文设置 "zh-hans" 即可
+       "styles": {
+           "website": "./styles/website.css" #自定义页面样式
+       },
+       "structure": {
+           "readme": "README.md" #指定Readme、Summary、Glossary和Languages对应的文件名
+       },
+       "plugins": [ #配置使用的插件
+           "-sharing",
+           "js-sequence-diagram-full@>=0.3.1",
+           "prism",
+           "-highlight",
+           "anchors",
+           "splitter",
+           "github",
+           "anchor-navigation-ex",
+           "expandable-chapters-small",
+           "pageview-count",
+           "language-picker"
+         ],
+         "pluginsConfig": { #配置插件的属性
+           "prism": {
+             "css": [
+               "prismjs/themes/prism-okaidia.css"
+             ],
+             "lang": {
+               "oc": "objectivec",
+               "objc": "objectivec",
+               "objective-c": "objectivec"
+             },
+             "ignore": [
+               "sequence"
+             ]
+           },
+           "github": {
+             "url": "https://github.com/linkplayapp/linkplay_sdk_doc"
+           },
+           "anchor-navigation-ex": {
+             "showGoTop": false
+           }
+         }
+   }
+   ```
 
 4. 如果book.json配置中包含plugins，那么在重新 `gitbook serve` 前需要先 `gitbook install` ，安装对应的插件，实际上就是用npm去install
 
