@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "使用Netlify加速Github Pages访问速度"
+title: "使用Netlify加速Github Pages访问速度(Jekyll)"
 date:   2020-4-27
 tags: [Tool]
 comments: true
@@ -9,7 +9,7 @@ toc: false
 ---
 
 概述：<br>
-使用Github Pages搭建个人博客，即免费又便捷，但其有一个很大的问题就是国内的访问速度很慢，为了低成本的解决这个问题，在此介绍一个服务：`Netlify`
+使用 **Github Pages** 配合 **Jekyll** 搭建个人博客，即免费又便捷，但其有一个很大的问题就是国内的访问速度很慢，为了低成本的解决这个问题，在此介绍一个服务：`Netlify`
 
 <!-- more -->
 
@@ -24,12 +24,13 @@ Netlify是一家提供静态网站托管的综合平台，支持自动从Github�
 2. 然后进行一系列配置，很简单，就不详细说明了；不过有几点要注意：
     1. 博客根目录要配置Gemfile：因为Netlify在构建网页时需要知道自己该以怎样的方式去构建
         ```shell
-        source 'https://rubygems.org'
-            gem "jekyll", '3.8.4'
+        source 'https://rubygems.org' #配置Netfily的话，因为其服务器在国外，因此用此源
+        # source 'https://gems.ruby-china.com' #本地执行的时候为了加速，将源改为ruby-china
+        gem "jekyll"
         group :jekyll_plugins do
-            gem 'jekyll-feed', '0.11.0'
-            gem 'jekyll-seo-tag', '2.5.0'
-            gem 'jekyll-sitemap', '1.2.0'
+            gem 'jekyll-feed'
+            gem 'jekyll-seo-tag'
+            gem 'jekyll-sitemap'
             gem 'jekyll-paginate'
         end
         ```

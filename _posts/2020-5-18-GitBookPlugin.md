@@ -13,15 +13,15 @@ toc: true
 
 <!-- more -->
 
-## 1. js-sequence-diagram-full (时序图)
-
->说明：时序图样式插件
+## 1. 时序图
+>插件：**`js-sequence-diagram-full`**<br>
+说明：时序图样式插件
 
 + [官方介绍](https://www.npmjs.com/package/gitbook-plugin-js-sequence-diagram-full)
   
 + 示例：
 
-```shell
+```json
 "plugins": ["js-sequence-diagram-full@>=0.3.1"] 
 ```
 
@@ -47,9 +47,10 @@ toc: true
 
 <hr>
 
-## 2. prism (代码块)
+## 2. 代码块
 
->说明：代码块的样式插件
+>插件：**`prism`**<br>
+说明：代码块的样式插件
 
 + [官方介绍](https://www.npmjs.com/package/gitbook-plugin-prism)
 
@@ -60,8 +61,8 @@ toc: true
 
 + 示例：
 
-```shell
-"plugins": ["prism"],
+```json
+"plugins": ["prism"]
 "pluginsConfig": {
     "prism": {
           "css": ["prismjs/themes/prism-okaidia.css"],
@@ -76,15 +77,16 @@ toc: true
 ![效果图]({{site.baseurl}}/images/Gitbook/prism-demo.png)
 <hr>
 
-## 3. anchors
+## 3. 锚点
 
->说明：标题带有 github 样式的锚点。(其实就是鼠标hover在对应h标签后，有个链接小图标显示，点击后标题稍微置顶)
+>插件：**`anchors`**<br>
+说明：标题带有 github 样式的锚点。(其实就是鼠标hover在对应h标签后，有个链接小图标显示，点击后标题稍微置顶)
 
 + [官方介绍](https://www.npmjs.com/package/gitbook-plugin-anchors)
 
 + 示例：
 
-```shell
+```json
   "plugins" : [ "anchors" ]
 ```
 
@@ -93,15 +95,16 @@ toc: true
 ![效果图]({{site.baseurl}}/images/Gitbook/anchors-demo.png)
 <hr>
 
-## 4. splitter 
+## 4. 目录宽度拖拽
 
->说明：在左侧目录和右侧内容之间添加一个可以拖拽的栏，用来调整两边的宽度。
+>插件：**`splitter`**<br>
+说明：在左侧目录和右侧内容之间添加一个可以拖拽的栏，用来调整两边的宽度。
 
 + [官方介绍](https://www.npmjs.com/package/gitbook-plugin-splitter)
 
 + 示例：
 
-```shell
+```json
   "plugins" : [ "splitter" ]
 ```
 
@@ -110,94 +113,94 @@ toc: true
 ![效果图]({{site.baseurl}}/images/Gitbook/splitter-demo.png)
 <hr>
 
-## 5. gtalk (评论)
+## 5. gtalk 评论
 
->说明：添加gitalk评论插件
+>插件：**`gtalk`**<br>
+说明：添加gitalk评论插件
 
 + [官方介绍](https://www.npmjs.com/package/gitbook-plugin-gtalk)
 
-```shell
-  "plugins": ["gtalk"],
-  "pluginsConfig": {
-    "gtalk": {
-      "clientID": "GitHub Application Client ID",
-      "clientSecret": "GitHub Application Client Secret",
-      "repo": "GitHub repo",
-      "owner": "GitHub repo owner",
-      "admin": ["GitHub repo owner and collaborators, only these guys can initialize github issues"]
-    }
-  }
+```json
+"plugins": ["gtalk"]
+"pluginsConfig": {
+      "gtalk": {
+        "clientID": "GitHub Application Client ID",
+        "clientSecret": "GitHub Application Client Secret",
+        "repo": "GitHub repo",
+        "owner": "GitHub repo owner",
+        "admin": ["GitHub repo owner and collaborators, only these guys can initialize github issues"]
+      }
+}
 ```
 
 ## 6. github
-   
->说明：在右上角显示 github 仓库的图标链接。
+>插件：**`github`**<br>  
+说明：在右上角显示 github 仓库的图标链接。
 
 + [官方介绍](https://www.npmjs.com/package/gitbook-plugin-github)
 
 + 示例：
 
-```shell
-{
-    "plugins": [ "github" ],
-    "pluginsConfig": {
-        "github": {
-            "url": "https://github.com/your/repo"
-        }
+```json
+"plugins": [ "github" ]
+"pluginsConfig": {
+    "github": {
+        "url": "https://github.com/your/repo"
     }
 }
 ```
 
-## 7. anchor-navigation-ex (目录)
+## 7. 章节目录
 
->说明：目录插件
+>插件：**`anchor-navigation-ex`**<br>
+说明：目录插件
 
 + [官方介绍](https://www.npmjs.com/package/gitbook-plugin-anchor-navigation-ex)
 + [具体参数介绍](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/blob/master/doc/effectScreenshot.md)
 
 + 示例：
 
-```shell
-{
-    "plugins": [
-       "anchor-navigation-ex"
-    ],
-    "pluginsConfig": {
-        "anchor-navigation-ex": {
-              "showGoTop":true, #右下角是否添加“返回顶部”按钮
-              "showLevel": false, #标题是否显示层级序号（控制页面标题是否被重写）
-              "printLog": true, #是否打印处理日志,在排查生成book失败的时候很有用
-              "mode": "float", #目录的显示模式，目前有三种“float悬浮”、“pageTop文章顶部”、“”不显示，默认float
-              "float": { #对应floatMode的图标，可以设置目录里标题前面的ICON
-                  "floatIcon": "fa fa-navicon",
-                  "showLevelIcon": true,
-                  "level1Icon": "fa fa-hand-o-right",
-                  "level2Icon": "fa fa-hand-o-right",
-                  "level3Icon": "fa fa-hand-o-right"
-              }
-        }
+```json
+"plugins": [
+   "anchor-navigation-ex"
+]
+"pluginsConfig": {
+    "anchor-navigation-ex": {
+          "showGoTop":true, #右下角是否添加“返回顶部”按钮
+          "showLevel": false, #标题是否显示层级序号（控制页面标题是否被重写）
+          "printLog": true, #是否打印处理日志,在排查生成book失败的时候很有用
+          "mode": "float", #目录的显示模式，目前有三种“float悬浮”、“pageTop文章顶部”、“”不显示，默认float
+          "float": { #对应floatMode的图标，可以设置目录里标题前面的ICON
+              "floatIcon": "fa fa-navicon",
+              "showLevelIcon": true,
+              "level1Icon": "fa fa-hand-o-right",
+              "level2Icon": "fa fa-hand-o-right",
+              "level3Icon": "fa fa-hand-o-right"
+          }
     }
 }
 ```
 
-## 8. expandable-chapters-small(目录折叠)
+## 8. book目录折叠
 
->说明：左侧的主目录折叠插件
+>插件：**`expandable-chapters-small`**<br>
+说明：左侧的主目录折叠插件
 
 + [官方介绍](https://www.npmjs.com/package/gitbook-plugin-expandable-chapters-small)
 
 + 示例：
 
-```shell
+```json
 "plugins": ["expandable-chapters-small"] 
 ```
 + 效果图：
 
 ![效果图]({{site.baseurl}}/images/Gitbook/expandable-chapters-small.png)
 
-## 9. pageview-count
+## 9. 访问数量
 
->说明：文档页面阅读数插件，菜单栏增加个小眼睛，显示访问次数
+>插件：**`pageview-count`**<br>
+说明：文档页面阅读数插件，菜单栏增加个小眼睛，显示访问次数
 
 PS: 经查询，是访问 `https://hitcounter.pythonanywhere.com/count/文章地址` 来查询访问次数的
 
@@ -205,7 +208,7 @@ PS: 经查询，是访问 `https://hitcounter.pythonanywhere.com/count/文章地
 
 + 示例：
 
-```shell
+```json
 "plugins": ["pageview-count"] 
 ```
 
@@ -213,16 +216,17 @@ PS: 经查询，是访问 `https://hitcounter.pythonanywhere.com/count/文章地
 
 ![效果图]({{site.baseurl}}/images/Gitbook/pageview-count.png)
 
-## 10. language-picker(国际化)
+## 10. 多语言国际化
 
->说明：语言切换插件
+>插件：**`language-picker`**<br>
+说明：语言切换插件
 
 + [官方介绍](https://www.npmjs.com/package/gitbook-plugin-language-picker)
 
 + 示例：
 
-```shell
-"plugins": ["language-picker"],
+```json
+"plugins": ["language-picker"]
 "pluginsConfig": { 
         "language-picker": { #可以不设置，默认2种
             "grid-columns": 2 #如果想设置更多种语言，就改这里即可
@@ -242,3 +246,44 @@ PS: 经查询，是访问 `https://hitcounter.pythonanywhere.com/count/文章地
     4. 这样该gitbook的初始页面其实就变成了`LANGS.md`，并同时提供了中/英文文档入口。例如：
 
        ![效果图]({{site.baseurl}}/images/Gitbook/language-picker.png)
+
+## 11. 插入自定义css/js
+
+>插件：**`addcssjs`**<br>
+说明：给gitbook添加外部的css、js文件
+
++ [官方介绍](https://www.npmjs.com/package/gitbook-plugin-addcssjs)
+
++ 示例：
+
+```json
+"plugins": ["addcssjs"]
+"pluginsConfig": { 
+        "addcssjs": {
+            "css": ["styles/website.css"],
+            "js": ["styles/website.js"]
+        }
+    }
+```
+
+>如果你使用了`language-picker`，那么在`pluginsConfig`配置路径时，记得要在路径前加上`../`;<br>因为国际化后，所有book的html已经不在根目录的上了，而是在对应的语言文件夹下面
+    
+## 12. 代码块行号、复制
+
+>插件：**`code`**<br>
+说明：为代码块添加行号和复制按钮，复制按钮可关闭
+
++ [官方介绍](https://www.npmjs.com/package/gitbook-plugin-code)
+
+```json
+{
+    "plugins" : [ 
+            "code" 
+     ],
+    "pluginsConfig": {
+      "code": {
+        "copyButtons": false #复制按钮可关闭
+      }
+    }
+}
+```

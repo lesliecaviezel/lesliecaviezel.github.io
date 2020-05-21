@@ -2,7 +2,7 @@
 layout: post
 title: "npm镜像管理"
 date:   2020-5-15
-tags: [Tool, GitBook]
+tags: [Tool, GitBook ,npm]
 comments: true
 author: 大宁
 toc: false
