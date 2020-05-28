@@ -109,7 +109,7 @@ github pages的原理是加载html的静态资源文件，所以只要让github 
     3. 递归遍历_book，把子文件全部覆盖至当前目录
     4. 删除_book
     5. git add . 
-    6. git commit -m 'update'
+    6. git commit -m 'Update by **当前时间**'
     7. git push origin gh-pages `提交代码`
     8. git checkout master `切换回master分支`
 
@@ -118,9 +118,11 @@ github pages的原理是加载html的静态资源文件，所以只要让github 
 ```python
 import os
 import shutil
+import datetime
+
 print("*** gf && gr")
 os.system("git fetch")
-os.system("git reabase")
+os.system("git rebase")
 
 print("*** Copy from master's _book ***")
 os.system("git checkout master -- _book")
@@ -147,7 +149,10 @@ if(os.path.exists(book_path)):
     print("*** Remove _book ***")
     print("*** Push... ***")
     os.system("git add .")
-    os.system("git commit -m 'update'")
+    now = datetime.datetime.now()
+    commitMessage = "Update by %d-%02d-%02d %02d:%02d:%02d" % (now.year,now.month,now.day,now.hour,now.minute,now.second)
+    commitCode = "git commit -m '%s'" % commitMessage
+    os.system(commitCode)
     os.system("git push origin gh-pages")
     print("*** Checkout master... ***")
     os.system("git checkout master")

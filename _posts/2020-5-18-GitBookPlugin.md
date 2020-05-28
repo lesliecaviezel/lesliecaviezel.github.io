@@ -133,6 +133,8 @@ toc: true
 }
 ```
 
+<hr>
+
 ## 6. github
 >插件：**`github`**<br>  
 说明：在右上角显示 github 仓库的图标链接。
@@ -149,6 +151,8 @@ toc: true
     }
 }
 ```
+
+<hr>
 
 ## 7. 章节目录
 
@@ -181,6 +185,8 @@ toc: true
 }
 ```
 
+<hr>
+
 ## 8. book目录折叠
 
 >插件：**`expandable-chapters-small`**<br>
@@ -196,6 +202,8 @@ toc: true
 + 效果图：
 
 ![效果图]({{site.baseurl}}/images/Gitbook/expandable-chapters-small.png)
+
+<hr>
 
 ## 9. 访问数量
 
@@ -216,6 +224,8 @@ PS: 经查询，是访问 `https://hitcounter.pythonanywhere.com/count/文章地
 
 ![效果图]({{site.baseurl}}/images/Gitbook/pageview-count.png)
 
+<hr>
+
 ## 10. 多语言国际化
 
 >插件：**`language-picker`**<br>
@@ -228,7 +238,7 @@ PS: 经查询，是访问 `https://hitcounter.pythonanywhere.com/count/文章地
 ```json
 "plugins": ["language-picker"]
 "pluginsConfig": { 
-        "language-picker": { #可以不设置，默认2种
+        "language-picker": { #可以不设置，默认两种
             "grid-columns": 2 #如果想设置更多种语言，就改这里即可
         }
     }
@@ -246,6 +256,8 @@ PS: 经查询，是访问 `https://hitcounter.pythonanywhere.com/count/文章地
     4. 这样该gitbook的初始页面其实就变成了`LANGS.md`，并同时提供了中/英文文档入口。例如：
 
        ![效果图]({{site.baseurl}}/images/Gitbook/language-picker.png)
+
+<hr>
 
 ## 11. 插入自定义css/js
 
@@ -267,7 +279,9 @@ PS: 经查询，是访问 `https://hitcounter.pythonanywhere.com/count/文章地
 ```
 
 >如果你使用了`language-picker`，那么在`pluginsConfig`配置路径时，记得要在路径前加上`../`;<br>因为国际化后，所有book的html已经不在根目录的上了，而是在对应的语言文件夹下面
-    
+ 
+<hr>
+   
 ## 12. 代码块行号、复制
 
 >插件：**`code`**<br>
