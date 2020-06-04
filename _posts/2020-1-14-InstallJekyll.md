@@ -13,6 +13,7 @@ author: 大宁
 <!-- more -->
 
 ## 一、安装
+- [Jekyll官网](https://www.jekyll.com.cn/)
 
 >安装前需要确认环境：Xcode、Ruby。（MacOS自带Ruby、Xcode不用解释）
 

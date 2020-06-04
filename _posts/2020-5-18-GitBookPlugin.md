@@ -82,6 +82,8 @@ toc: true
 >插件：**`anchors`**<br>
 说明：标题带有 github 样式的锚点。(其实就是鼠标hover在对应h标签后，有个链接小图标显示，点击后标题稍微置顶)
 
+>如果使用了 `anchor-navigation-ex`，那就不需要这个`anchors`插件了，已被其包含
+
 + [官方介绍](https://www.npmjs.com/package/gitbook-plugin-anchors)
 
 + 示例：
