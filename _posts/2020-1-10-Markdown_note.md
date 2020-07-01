@@ -59,12 +59,14 @@ print('python 代码块？')
 ```
 - 插入图片
   - 例：![test.png](https://i.loli.net/2020/01/09/n9bcw14OXN82lMD.png)
+  ![blog头像图片](../images/favicon.ico)
   - 代码
-```
-![图片描述](图片链接)
-#如果是本地链接(大括号间无需空格)：{ { site.baseurl } }/images/.../xx.png
-```
   
+    ```shell
+    ![描述](图片地址)
+    #例如： ![blog头像图片](../images/blog.jpg)
+    ```
+
 - 分割线：就是3个星号
   ```
   ***
