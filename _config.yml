@@ -5,9 +5,9 @@
 # 你的博客名称，请用你想要的博客名替换“LOFFER”，以下修改都可类似处理
 # 注意，“name: LOFFER”，冒号后面的空格不可以省略。
 # 井号后面的文字是说明文档，不会被程序读取。
-name: "鼓捣猫宁"
+name: "柳达是溜达"
 # 描述/签名
-description: "梧高凤必至，花香蝶自来"
+description: "Sith Slut"
 
 #
 # 下面的设定都是可选的
@@ -43,11 +43,11 @@ footer-links:
   #weibo: frommidworld #请输入你的微博个性域名 https://www.weibo.com/<thispart>
   behance: # https://www.behance.net/<username>
   dribbble:
-  zhihu: da-ning-40
-  email: 767600461@qq.com
+  zhihu: 
+  email: 
   facebook:
   flickr:
-  github: NeedQuiet 
+  github: lesliecaviezel 
   googleplus: # anything in your profile username that comes after plus.google.com/
   instagram:
   linkedin:
@@ -59,7 +59,7 @@ footer-links:
   youtube:
 
 # 站点页脚的文字
-footer-text: Copyright (c) 2020 大宁
+footer-text: 师傅，来玩！
 
 # Enter your Disqus shortname (not your username) to enable commenting on posts
 # You can find your shortname on the Settings page of your Disqus account
@@ -67,16 +67,16 @@ disqus: # fromendworld
 
 # Gitalk
 gitalk:
-  clientID: 410331bd5619608b166d
-  clientSecret: 0f1ff3f286ba04e15d25ab488f5aefb13f60f257
-  repo: needquiet.github.io
-  owner: NeedQuiet
+  clientID: e24a344a80d3a68c4682
+  clientSecret: d5c7319cd4d87562b64993faad282bd65e32397c
+  repo: lesliecaviezel.github.io
+  owner: lesliecaviezel
 
 # 输入Google Analytics web tracking code
 google_analytics: # UA-152888548-1
 
 # 输入你的网站域名（如果你没有添加自己的域名，而是直接用GitHub pages分配的域名的话可以省略）
-url: 
+url: https://lesliecaviezel.github.io
 
 # 添加你的博客的二级域名，一般来说是你的repository名
 # 如果你的博客的URL是：(http://yourusername.github.io/repository-name)
