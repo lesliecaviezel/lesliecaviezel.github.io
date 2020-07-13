@@ -6,7 +6,7 @@
 
 ### 致谢
 
-本站Fork了NeedQuiet的主题[lemonchann](https://lemonchann.github.io)
+本站Fork了NeedQuiet的主题[NeedQuiet](https://needquiet.github.io)
 
 ### 参考文档
 [可能是最全面的github pages搭建个人博客教程](https://zhuanlan.zhihu.com/p/94121927)
